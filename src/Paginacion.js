@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export default function Paginacion(props) {
   const TotalPages = () => {
     const resultados = [];
@@ -14,6 +16,11 @@ export default function Paginacion(props) {
     }
     return resultados;
   };
+
+  // esto es equivalente a un whatch de vue
+  useEffect(() => {
+    alert("esto es un whatch");
+  }, [props.pagina]);
   return (
     <div className="topbar-filter">
       <div className="pagination2">
