@@ -2,8 +2,11 @@ import "./App.css";
 import Pelicula from "./Pelicula";
 import PageWrapper from "./PageWrapper";
 import peliculas from "./peliculas";
+import Paginacion from "./Paginacion";
+import { useState } from "react";
 
 function App() {
+  const [pagina, setPagina] = useState(1);
   return (
     <PageWrapper>
       {peliculas.map((p) => (
@@ -19,6 +22,12 @@ function App() {
           {p.description}
         </Pelicula>
       ))}
+
+      <Paginacion
+        pagina={pagina}
+        total={4}
+        onChange={(pagina) => setPagina(pagina)}
+      ></Paginacion>
     </PageWrapper>
   );
 }
